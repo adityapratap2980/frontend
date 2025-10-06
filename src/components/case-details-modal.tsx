@@ -78,7 +78,7 @@ export function CaseDetailsModal({ case_, isOpen, onClose }: CaseDetailsModalPro
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>VetAnemia AI - Case ${case_.id} Report</title>
+  <title>VetAnemia - Case ${case_.id} Report</title>
   <style>
     @page { margin: 24mm; }
     body { font-family: Arial, Helvetica, sans-serif; color: #111827; line-height: 1.4; }
@@ -112,7 +112,7 @@ export function CaseDetailsModal({ case_, isOpen, onClose }: CaseDetailsModalPro
       <div class="brand">
         <div class="brand-logo">VA</div>
         <div>
-          <div class="title">VetAnemia AI • Clinic Report</div>
+          <div class="title">VetAnemia • Clinic Report</div>
           <div class="subtitle">Case ${case_.id} • ${formatDate(case_.date)}</div>
         </div>
       </div>
@@ -179,7 +179,7 @@ export function CaseDetailsModal({ case_, isOpen, onClose }: CaseDetailsModalPro
     ${case_.followUp ? `<div class="section card"><div class="card-header">Follow-up</div><div class="card-body"><table><tbody><tr><td class="kv">Scheduled</td><td class="val">${formatDate(case_.followUp)}</td></tr></tbody></table></div></div>` : ''}
 
     <div class="footer">
-      <div>VetAnemia AI • ML Diagnostics</div>
+      <div>VetAnemia • ML Diagnostics</div>
       <div>Confidential clinical document</div>
     </div>
   </body>

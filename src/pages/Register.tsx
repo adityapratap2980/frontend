@@ -79,7 +79,7 @@ export default function RegisterPage() {
               <Stethoscope className="h-8 w-8 text-primary-foreground" />
             </div>
           </div>
-          <h1 className="text-2xl font-bold text-foreground">VetAnemia AI</h1>
+          <h1 className="text-2xl font-bold text-foreground">VetAnemia</h1>
           <p className="text-muted-foreground">Create your veterinary professional account</p>
         </div>
 

@@ -22,7 +22,7 @@ export default function LoginPage() {
     e.preventDefault()
     setIsLoading(true)
     setError("")
-    const BACKEND_SERVER = import.meta.env.VITE_BACKEND_SERVER 
+    const BACKEND_SERVER = import.meta.env.VITE_BACKEND_SERVER
     console.log(BACKEND_SERVER)
 
     try {
@@ -38,7 +38,7 @@ export default function LoginPage() {
       const data = await resp.json()
       localStorage.setItem("auth_token", data.token)
       window.location.href = "/dashboard"
-    } catch (err: any) {    
+    } catch (err: any) {
       setError(err.message || "Login failed")
     } finally {
       setIsLoading(false)
@@ -55,7 +55,7 @@ export default function LoginPage() {
               <Stethoscope className="h-8 w-8 text-primary-foreground" />
             </div>
           </div>
-          <h1 className="text-2xl font-bold text-foreground">VetAnemia AI</h1>
+          <h1 className="text-2xl font-bold text-foreground">VetAnemia</h1>
           <p className="text-muted-foreground">Advanced ML-based anemia prediction for veterinary care</p>
         </div>
 

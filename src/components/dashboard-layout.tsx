@@ -180,7 +180,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
               <Stethoscope className="h-6 w-6 text-sidebar-accent-foreground" />
             </div>
             <div>
-              <h1 className="font-bold text-sidebar-foreground">VetAnemia AI</h1>
+              <h1 className="font-bold text-sidebar-foreground">VetAnemia</h1>
               <p className="text-xs text-muted-foreground">ML Diagnostics</p>
             </div>
           </div>

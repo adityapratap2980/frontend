@@ -38,9 +38,9 @@ export default function DashboardPage() {
     const token = localStorage.getItem('auth_token')
     if (!token) return
     const headers = { 'Authorization': `Bearer ${token}` }
-    const fetchSummary = fetch('http://localhost:8000/api/dashboard/summary/', { headers })
+    const fetchSummary = fetch(`${import.meta.env.VITE_BACKEND_SERVER}/api/dashboard/summary/`, { headers })
       .then(r => r.ok ? r.json() : Promise.reject(r.status))
-    const fetchRecent = fetch('http://localhost:8000/api/dashboard/recent/', { headers })
+    const fetchRecent = fetch(`${import.meta.env.VITE_BACKEND_SERVER}/api/dashboard/recent/`, { headers })
       .then(r => r.ok ? r.json() : Promise.reject(r.status))
     Promise.all([fetchSummary, fetchRecent])
       .then(([s, r]) => {
@@ -150,28 +150,28 @@ export default function DashboardPage() {
               </CardHeader>
               <CardContent className="space-y-3 flex flex-col">
                 <Link to="/dashboard/prediction">
-                <Button variant="outline" className="w-full justify-start bg-transparent" size="sm">
-                  <Stethoscope className="mr-2 h-4 w-4" />
-                  New Patient Assessment
-                </Button>
+                  <Button variant="outline" className="w-full justify-start bg-transparent" size="sm">
+                    <Stethoscope className="mr-2 h-4 w-4" />
+                    New Patient Assessment
+                  </Button>
                 </Link>
                 <Link to="/dashboard/cases">
-                <Button variant="outline" className="w-full justify-start bg-transparent" size="sm">
-                  <Search className="mr-2 h-4 w-4" />
-                  Search Case History
-                </Button>
+                  <Button variant="outline" className="w-full justify-start bg-transparent" size="sm">
+                    <Search className="mr-2 h-4 w-4" />
+                    Search Case History
+                  </Button>
                 </Link>
                 <Link to="/dashboard/reports">
-                <Button variant="outline" className="w-full justify-start bg-transparent" size="sm">
-                  <BarChart3 className="mr-2 h-4 w-4" />
-                  Generate Report
-                </Button>
+                  <Button variant="outline" className="w-full justify-start bg-transparent" size="sm">
+                    <BarChart3 className="mr-2 h-4 w-4" />
+                    Generate Report
+                  </Button>
                 </Link>
                 <Link to="/dashboard/profile">
-                <Button variant="outline" className="w-full justify-start bg-transparent" size="sm">
-                  <Settings className="mr-2 h-4 w-4" />
-                  Profile Settings
-                </Button>
+                  <Button variant="outline" className="w-full justify-start bg-transparent" size="sm">
+                    <Settings className="mr-2 h-4 w-4" />
+                    Profile Settings
+                  </Button>
                 </Link>
               </CardContent>
             </Card>

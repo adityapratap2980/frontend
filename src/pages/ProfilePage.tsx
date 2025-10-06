@@ -45,7 +45,7 @@ export default function ProfilePage() {
             }
 
             try {
-                const response = await fetch('http://localhost:8000/auth/me/', {
+                const response = await fetch(`${import.meta.env.VITE_BACKEND_SERVER}/auth/me/`, {
                     headers: {
                         'Authorization': `Bearer ${token}`,
                         'Content-Type': 'application/json',
@@ -87,7 +87,7 @@ export default function ProfilePage() {
                 return
             }
 
-            const response = await fetch('http://localhost:8000/auth/profile/', {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_SERVER}/auth/profile/`, {
                 method: 'PUT',
                 headers: {
                     'Authorization': `Bearer ${token}`,

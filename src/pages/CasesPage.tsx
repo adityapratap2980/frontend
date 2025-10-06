@@ -9,8 +9,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { DashboardLayout } from "@/components/dashboard-layout"
 import { CaseDetailsModal } from "@/components/case-details-modal"
-import { Search, Calendar, Eye, Download, MoreHorizontal, TrendingUp, TrendingDown, Minus } from "lucide-react"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { Search, Calendar, Eye, Download, TrendingUp, TrendingDown, Minus } from "lucide-react"
 
 interface CaseRecord {
     id: string
@@ -105,7 +104,7 @@ export default function CasesPage() {
         if (!token) return
             ; (async () => {
                 try {
-                    const resp = await fetch('http://localhost:8000/api/cases/', { headers: { Authorization: `Bearer ${token}` } })
+                    const resp = await fetch(`${import.meta.env.VITE_BACKEND_SERVER}/api/cases/`, { headers: { Authorization: `Bearer ${token}` } })
                     if (!resp.ok) return
                     const data = await resp.json()
                     const mapped: CaseRecord[] = (data.results || []).map((c: any) => ({
@@ -324,7 +323,7 @@ export default function CasesPage() {
                                                 <Eye className="h-4 w-4" />
                                             </Button>
 
-                                           
+
                                         </div>
                                     </div>
                                 </div>

@@ -118,7 +118,7 @@ export default function PredictionPage() {
         glucose: Number.parseFloat(formData.labValues.glucose || "0"),
       }
 
-      const resp = await fetch("http://localhost:8000/api/predict/", {
+      const resp = await fetch(`${import.meta.env.VITE_BACKEND_SERVER}/api/predict/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

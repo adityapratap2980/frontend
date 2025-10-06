@@ -39,7 +39,7 @@ export default function RegisterPage() {
     }
 
     try {
-      const resp = await fetch("http://localhost:8000/auth/register/", {
+      const resp = await fetch(`${import.meta.env.VITE_BACKEND_SERVER}/auth/register/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

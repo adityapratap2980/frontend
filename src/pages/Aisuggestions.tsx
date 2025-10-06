@@ -53,8 +53,8 @@ export default function AISuggestionsPage() {
             ; (async () => {
                 try {
                     const [s, c] = await Promise.all([
-                        fetch('http://localhost:8000/api/ai/stats/', { headers: { Authorization: `Bearer ${token}` } }).then(r => r.ok ? r.json() : Promise.reject(r.status)),
-                        fetch('http://localhost:8000/api/cases/', { headers: { Authorization: `Bearer ${token}` } }).then(r => r.ok ? r.json() : Promise.reject(r.status)),
+                        fetch(`${import.meta.env.VITE_BACKEND_SERVER}/api/ai/stats/`, { headers: { Authorization: `Bearer ${token}` } }).then(r => r.ok ? r.json() : Promise.reject(r.status)),
+                        fetch(`${import.meta.env.VITE_BACKEND_SERVER}/api/cases/`, { headers: { Authorization: `Bearer ${token}` } }).then(r => r.ok ? r.json() : Promise.reject(r.status)),
                     ])
                     setStats(s)
                     setCases((c.results || []) as CaseItem[])
@@ -78,7 +78,7 @@ export default function AISuggestionsPage() {
                 prognosis: c.prognosis,
                 lab_parameters: c.labValues || {},
             }
-            const resp = await fetch('http://localhost:8000/api/ai/suggestions/', {
+            const resp = await fetch(`${import.meta.env.VITE_BACKEND_SERVER}/api/ai/suggestions/`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
                 body: JSON.stringify({ prediction, patient: { species: c.species, age: c.age, riskLevel: c.riskLevel } }),

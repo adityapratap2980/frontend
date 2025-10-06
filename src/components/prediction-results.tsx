@@ -297,7 +297,7 @@ export function PredictionResults({ result, patientName, species, breed, age, we
                   glucose: labValues.glucose,
                 },
               }
-              const resp = await fetch('http://localhost:8000/api/cases/create/', {
+              const resp = await fetch(`${import.meta.env.VITE_BACKEND_SERVER}/api/cases/create/`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
                 body: JSON.stringify(payload),

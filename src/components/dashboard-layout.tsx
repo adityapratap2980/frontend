@@ -93,7 +93,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
     if (!userFetchInFlight) {
       userFetchInFlight = (async () => {
         try {
-          const response = await fetch('http://localhost:8000/auth/me/', {
+          const response = await fetch(`${import.meta.env.VITE_BACKEND_SERVER}/auth/me/`, {
             headers: {
               'Authorization': `Bearer ${token}`,
               'Content-Type': 'application/json',

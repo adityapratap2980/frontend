@@ -22,9 +22,11 @@ export default function LoginPage() {
     e.preventDefault()
     setIsLoading(true)
     setError("")
+    const BACKEND_SERVER = import.meta.env.VITE_BACKEND_SERVER 
+    console.log(BACKEND_SERVER)
 
     try {
-      const resp = await fetch("http://localhost:8000/auth/login/", {
+      const resp = await fetch(`${BACKEND_SERVER}/auth/login/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

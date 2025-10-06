@@ -2,10 +2,9 @@
 
 import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Brain, Lightbulb, TrendingUp, CheckCircle, Clock, Stethoscope, Activity, FileText } from "lucide-react"
+import { Brain, Lightbulb, TrendingUp, CheckCircle, Clock, Stethoscope, Activity } from "lucide-react"
 
 interface AISuggestion {
   id: string
@@ -47,7 +46,7 @@ export function AISuggestionsPanel({ patientData, showAll = false }: AISuggestio
       return
     }
     const prediction = JSON.parse(predictionRaw)
-    fetch('http://localhost:8000/api/ai/suggestions/', {
+    fetch(`${import.meta.env.VITE_BACKEND_SERVER}/api/ai/suggestions/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -142,7 +141,7 @@ export function AISuggestionsPanel({ patientData, showAll = false }: AISuggestio
               <SuggestionCard key={suggestion.id} suggestion={suggestion} compact />
             ))}
 
-            
+
           </div>
         )}
       </CardContent>

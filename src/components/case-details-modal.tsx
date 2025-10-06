@@ -258,7 +258,7 @@ export function CaseDetailsModal({ case_, isOpen, onClose }: CaseDetailsModalPro
 
               {case_.followUp && (
                 <div className="p-3 bg-accent/10 rounded-lg border border-accent/20">
-                  <p className="text-sm font-medium text-accent-foreground">Follow-up Scheduled</p>
+                  <p className="text-sm font-medium text-lime-600-foreground">Follow-up Scheduled</p>
                   <p className="text-xs text-muted-foreground mt-1">{new Date(case_.followUp).toLocaleDateString()}</p>
                 </div>
               )}
@@ -371,7 +371,7 @@ export function CaseDetailsModal({ case_, isOpen, onClose }: CaseDetailsModalPro
                 <ul className="space-y-2">
                   {case_.recommendations.map((rec, index) => (
                     <li key={index} className="flex items-start gap-2 text-sm">
-                      <CheckCircle className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-4 w-4 text-lime-600 mt-0.5 flex-shrink-0" />
                       {rec}
                     </li>
                   ))}

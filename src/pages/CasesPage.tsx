@@ -9,7 +9,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { DashboardLayout } from "@/components/dashboard-layout"
 import { CaseDetailsModal } from "@/components/case-details-modal"
-import { Search, Calendar, Eye, Download, TrendingUp, TrendingDown, Minus } from "lucide-react"
+import { Search, Calendar, Eye, TrendingUp, TrendingDown, Minus } from "lucide-react"
 
 interface CaseRecord {
     id: string
@@ -155,10 +155,7 @@ export default function CasesPage() {
                         <h1 className="text-3xl font-bold text-foreground">Case History</h1>
                         <p className="text-muted-foreground">Manage and review anemia prediction cases</p>
                     </div>
-                    <Button>
-                        <Download className="mr-2 h-4 w-4" />
-                        Export Cases
-                    </Button>
+                   
                 </div>
 
                 {/* Stats Cards */}
@@ -196,10 +193,10 @@ export default function CasesPage() {
                             <div className="flex items-center justify-between">
                                 <div>
                                     <p className="text-sm font-medium text-muted-foreground">Pending Review</p>
-                                    <p className="text-2xl font-bold text-accent">{stats.pending}</p>
+                                    <p className="text-2xl font-bold text-lime-600">{stats.pending}</p>
                                 </div>
                                 <div className="h-8 w-8 bg-accent/10 rounded-full flex items-center justify-center">
-                                    <Eye className="h-4 w-4 text-accent" />
+                                    <Eye className="h-4 w-4 text-lime-600" />
                                 </div>
                             </div>
                         </CardContent>

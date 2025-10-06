@@ -70,7 +70,7 @@ export function AISuggestionsPanel({ patientData, showAll = false }: AISuggestio
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Brain className="h-5 w-5 text-accent animate-pulse" />
+            <Brain className="h-5 w-5 text-lime-600 animate-pulse" />
             Generating AI Suggestions...
           </CardTitle>
         </CardHeader>
@@ -103,7 +103,7 @@ export function AISuggestionsPanel({ patientData, showAll = false }: AISuggestio
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <Brain className="h-5 w-5 text-accent" />
+          <Brain className="h-5 w-5 text-lime-600" />
           AI Clinical Suggestions
         </CardTitle>
         <CardDescription>
@@ -264,6 +264,6 @@ function getTypeColor(type: string) {
     case "preventive":
       return "text-green-600"
     default:
-      return "text-accent"
+      return "text-lime-600"
   }
 }

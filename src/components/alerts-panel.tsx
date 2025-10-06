@@ -42,22 +42,20 @@ export function AlertsPanel() {
         {alerts.map((alert) => (
           <div key={alert.id} className="flex items-start gap-3 p-3 border border-border rounded-lg">
             <div
-              className={`p-1 rounded-full ${
-                alert.type === "critical"
+              className={`p-1 rounded-full ${alert.type === "critical"
                   ? "bg-destructive/10"
                   : alert.type === "warning"
                     ? "bg-accent/10"
                     : "bg-green-100"
-              }`}
+                }`}
             >
               <alert.icon
-                className={`h-4 w-4 ${
-                  alert.type === "critical"
+                className={`h-4 w-4 ${alert.type === "critical"
                     ? "text-destructive"
                     : alert.type === "warning"
-                      ? "text-accent"
+                      ? "text-lime-600"
                       : "text-green-600"
-                }`}
+                  }`}
               />
             </div>
             <div className="flex-1 min-w-0">

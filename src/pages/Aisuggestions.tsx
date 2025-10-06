@@ -7,7 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge"
 import { DashboardLayout } from "@/components/dashboard-layout"
 import { useEffect } from "react"
-import { Brain, Search, TrendingUp, Lightbulb, Activity, Stethoscope } from "lucide-react"
+import { Brain, Search, TrendingUp, Lightbulb, Activity } from "lucide-react"
 import { useState } from "react"
 
 interface CaseItem {
@@ -101,10 +101,7 @@ export default function AISuggestionsPage() {
                         <h1 className="text-3xl font-bold text-foreground">AI Clinical Suggestions</h1>
                         <p className="text-muted-foreground">Comprehensive AI-powered clinical recommendations and insights</p>
                     </div>
-                    <Button>
-                        <Brain className="mr-2 h-4 w-4" />
-                        Generate New Insights
-                    </Button>
+                  
                 </div>
 
                 {/* Stats Cards */}
@@ -159,7 +156,7 @@ export default function AISuggestionsPage() {
                                     <p className="text-2xl font-bold">{stats.avgAccuracy}%</p>
                                 </div>
                                 <div className="h-8 w-8 bg-accent/10 rounded-full flex items-center justify-center">
-                                    <Brain className="h-4 w-4 text-accent" />
+                                    <Brain className="h-4 w-4 text-lime-600" />
                                 </div>
                             </div>
                         </CardContent>
@@ -287,63 +284,7 @@ export default function AISuggestionsPage() {
                     </div>
                 )}
 
-                {/* Recent Insights */}
-                <Card>
-                    <CardHeader>
-                        <CardTitle className="flex items-center gap-2">
-                            <Brain className="h-5 w-5 text-accent" />
-                            Recent AI Insights
-                        </CardTitle>
-                        <CardDescription>Latest patterns and trends identified by our AI system</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                        <div className="grid gap-4 md:grid-cols-2">
-                            <div className="p-4 border border-border rounded-lg">
-                                <div className="flex items-center gap-2 mb-2">
-                                    <Stethoscope className="h-4 w-4 text-blue-600" />
-                                    <Badge variant="outline">Pattern Recognition</Badge>
-                                </div>
-                                <h4 className="font-medium mb-1">Seasonal Anemia Trends</h4>
-                                <p className="text-sm text-muted-foreground">
-                                    AI detected 23% increase in iron deficiency cases during winter months in senior dogs.
-                                </p>
-                            </div>
-
-                            <div className="p-4 border border-border rounded-lg">
-                                <div className="flex items-center gap-2 mb-2">
-                                    <TrendingUp className="h-4 w-4 text-amber-600" />
-                                    <Badge variant="outline">Predictive Analytics</Badge>
-                                </div>
-                                <h4 className="font-medium mb-1">Early Detection Improvement</h4>
-                                <p className="text-sm text-muted-foreground">
-                                    Model accuracy improved by 4.2% with integration of breed-specific risk factors.
-                                </p>
-                            </div>
-
-                            <div className="p-4 border border-border rounded-lg">
-                                <div className="flex items-center gap-2 mb-2">
-                                    <Activity className="h-4 w-4 text-red-600" />
-                                    <Badge variant="outline">Treatment Optimization</Badge>
-                                </div>
-                                <h4 className="font-medium mb-1">Iron Supplementation Protocol</h4>
-                                <p className="text-sm text-muted-foreground">
-                                    AI suggests dosage adjustments based on patient response patterns show 18% faster recovery.
-                                </p>
-                            </div>
-
-                            <div className="p-4 border border-border rounded-lg">
-                                <div className="flex items-center gap-2 mb-2">
-                                    <Lightbulb className="h-4 w-4 text-green-600" />
-                                    <Badge variant="outline">Clinical Insights</Badge>
-                                </div>
-                                <h4 className="font-medium mb-1">Breed-Specific Recommendations</h4>
-                                <p className="text-sm text-muted-foreground">
-                                    Golden Retrievers show better response to combined iron and B12 supplementation protocols.
-                                </p>
-                            </div>
-                        </div>
-                    </CardContent>
-                </Card>
+             
             </div>
         </DashboardLayout>
     )

@@ -113,16 +113,16 @@ export default function LoginPage() {
               </Button>
             </form>
 
-            <div className="mt-4 text-center text-sm">
-              <Link to="/auth/forgot-password" className="text-accent hover:underline">
+            {/* <div className="mt-4 text-center text-sm">
+              <Link to="/forgot-password" className="text-lime-600 hover:underline">
                 Forgot your password?
               </Link>
-            </div>
+            </div> */}
 
             <div className="mt-4 text-center text-sm text-muted-foreground">
               Don't have an account?{" "}
-              <Link to="/auth/register" className="text-accent hover:underline">
-                Contact your administrator
+              <Link to="/register" className="text-lime-600 hover:underline">
+                Create new account
               </Link>
             </div>
           </CardContent>

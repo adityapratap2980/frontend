@@ -114,7 +114,7 @@ export function PredictionResults({ result, patientName, species, breed, age, we
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Brain className="h-5 w-5 text-accent" />
+            <Brain className="h-5 w-5 text-lime-600" />
             AI Prediction Results
           </CardTitle>
           <CardDescription>Analysis for {patientName}</CardDescription>
@@ -242,7 +242,7 @@ export function PredictionResults({ result, patientName, species, breed, age, we
           <ul className="space-y-2">
             {result.recommendations.map((rec, index) => (
               <li key={index} className="flex items-start gap-2 text-sm">
-                <CheckCircle className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
+                <CheckCircle className="h-4 w-4 text-lime-600 mt-0.5 flex-shrink-0" />
                 {rec}
               </li>
             ))}

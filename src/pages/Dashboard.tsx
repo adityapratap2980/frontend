@@ -9,8 +9,6 @@ import {
   TrendingUp,
   Stethoscope,
   Brain,
-  BarChart3,
-  Calendar,
   Search,
   Plus,
   Settings,
@@ -61,14 +59,12 @@ export default function DashboardPage() {
             <p className="text-muted-foreground">Welcome back. Here's your clinic overview.</p>
           </div>
           <div className="flex items-center gap-3">
-            <Button variant="outline" size="sm">
-              <Calendar className="mr-2 h-4 w-4" />
-              Today
-            </Button>
+          <Link to="/dashboard/prediction">
             <Button size="sm">
               <Plus className="mr-2 h-4 w-4" />
               New Prediction
             </Button>
+          </Link>
           </div>
         </div>
 
@@ -119,13 +115,13 @@ export default function DashboardPage() {
             {/* <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Brain className="h-5 w-5 text-accent" />
+                  <Brain className="h-5 w-5 text-lime-600" />
                   AI Insights
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="p-3 bg-accent/10 rounded-lg border border-accent/20">
-                  <p className="text-sm font-medium text-accent-foreground">High Risk Alert</p>
+                  <p className="text-sm font-medium text-lime-600-foreground">High Risk Alert</p>
                   <p className="text-xs text-muted-foreground mt-1">
                     3 patients showing early anemia indicators. Review recommended.
                   </p>
@@ -161,12 +157,7 @@ export default function DashboardPage() {
                     Search Case History
                   </Button>
                 </Link>
-                <Link to="/dashboard/reports">
-                  <Button variant="outline" className="w-full justify-start bg-transparent" size="sm">
-                    <BarChart3 className="mr-2 h-4 w-4" />
-                    Generate Report
-                  </Button>
-                </Link>
+             
                 <Link to="/dashboard/profile">
                   <Button variant="outline" className="w-full justify-start bg-transparent" size="sm">
                     <Settings className="mr-2 h-4 w-4" />

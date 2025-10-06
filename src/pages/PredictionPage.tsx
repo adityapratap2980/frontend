@@ -169,28 +169,6 @@ export default function PredictionPage() {
     }
   }
 
-  const resetForm = () => {
-    setFormData({
-      patientName: "",
-      species: "",
-      breed: "",
-      age: "",
-      weight: "",
-      gender: "",
-      symptoms: "",
-      labValues: {
-        hemoglobin: "",
-        hematocrit: "",
-        redBloodCells: "",
-        mcv: "",
-        mch: "",
-        mchc: "",
-      },
-    })
-    setResult(null)
-    setError("")
-  }
-
   return (
     <DashboardLayout>
       <div className="space-y-6">
@@ -200,9 +178,7 @@ export default function PredictionPage() {
             <h1 className="text-3xl font-bold text-foreground">Anemia Prediction</h1>
             <p className="text-muted-foreground">AI-powered anemia risk assessment for veterinary patients</p>
           </div>
-          <Button variant="outline" onClick={resetForm}>
-            New Assessment
-          </Button>
+         
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
@@ -506,7 +482,7 @@ export default function PredictionPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Brain className="h-5 w-5 text-accent" />
+                  <Brain className="h-5 w-5 text-lime-600" />
                   AI Analysis in Progress
                 </CardTitle>
               </CardHeader>

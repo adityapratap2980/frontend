@@ -38,7 +38,7 @@ export default function LoginPage() {
       const data = await resp.json()
       localStorage.setItem("auth_token", data.token)
       window.location.href = "/dashboard"
-    } catch (err: any) {
+    } catch (err: any) {    
       setError(err.message || "Login failed")
     } finally {
       setIsLoading(false)

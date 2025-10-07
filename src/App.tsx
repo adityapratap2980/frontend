@@ -6,9 +6,13 @@ import AISuggestionsPage from "./pages/Aisuggestions"
 import LoginPage from "./pages/Login"
 import RegisterPage from "./pages/Register"
 import CasesPage from "./pages/CasesPage"
+import HomePage from "./pages/HomePage"
+import AboutPage from "./pages/AboutPage"
+
 function App() {
   return (
     <Routes>
+      <Route path="/" element={<HomePage />} />
       <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
       <Route path="/dashboard/cases" element={<RequireAuth><CasesPage /></RequireAuth>} />
       <Route path="/dashboard/prediction" element={<RequireAuth><PredictionPage /></RequireAuth>} />
@@ -16,7 +20,7 @@ function App() {
       <Route path="/dashboard/ai-suggestions" element={<RequireAuth><AISuggestionsPage /></RequireAuth>} />
       <Route path="/login" element={<GuestOnly><LoginPage /></GuestOnly>} />
       <Route path="/register" element={<GuestOnly><RegisterPage /></GuestOnly>} />
-      <Route path="/" element={<Navigate to="/login" replace />} />
+      <Route path="/about" element={<AboutPage />} />
       {/* <Route path="/reset-password" element={<ResetPassword />} /> */}
       {/* <Route path="/verify-email" element={<VerifyEmail />} /> */}
       {/* <Route path="*" element={<NotFound />} /> */}

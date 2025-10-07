@@ -19,10 +19,10 @@ import {
   History,
   User,
   LogOut,
-  Bell,
   Stethoscope,
   Menu,
   Lightbulb,
+  Home,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Link, useNavigate, useLocation } from "react-router-dom"
@@ -254,10 +254,11 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
             </Button>
 
             <div className="flex-1" />
-
-            <Button variant="ghost" size="sm">
-              <Bell className="h-5 w-5" />
+<Link to="/">
+            <Button variant="outline" className="flex justify-center items-center gap-2" size="sm">
+              <Home className="h-5 w-5" /> Home
             </Button>
+</Link>
           </div>
         </header>
 
